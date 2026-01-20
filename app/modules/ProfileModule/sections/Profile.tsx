@@ -1,12 +1,7 @@
 import { Card, CardHeader, CardTitle } from "~/components/ui/card";
-import { FileDiff, TerminalIcon, NotebookIcon } from "lucide-react";
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  type KeyboardEventHandler,
-} from "react";
-import { filesData } from "../payload";
+import { TerminalIcon, NotebookIcon } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { bootSequence, filesData, VAZHAFETCH } from "../payload";
 
 type FileName = keyof typeof filesData;
 type NewHistory = {
@@ -16,11 +11,30 @@ type NewHistory = {
 
 const Profile = () => {
   const [isBooting, setIsBooting] = useState(true);
-  const [bootLines, setBootLines] = useState([]);
+  const [hasBooted, setHasBooted] = useState(false);
+  const [bootLines, setBootLines] = useState<string[]>([]);
   const [history, setHistory] = useState<NewHistory[]>([]);
   const [input, setInput] = useState("");
   const terminalEndRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    if (!sectionRef.current || hasBooted) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasBooted(true);
+        }
+      },
+      {
+        threshold: 1,
+      },
+    );
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  });
 
   useEffect(() => {
     if (terminalEndRef.current) {
@@ -42,7 +56,7 @@ const Profile = () => {
           newHistory.push({
             type: "output",
             content:
-              "Command yang dapat digunakan adalah: \n- ls (show files)\n- cat [input desired file] (read file)\n- vazhafetch (vazha's cpu stats)\n- clear (clear the terminal)\n- help.",
+              "List of usable commands: \n- ls (show files)\n- cat [input desired file] (read file)\n- vazhafetch (vazha's cpu stats)\n- clear (clear the terminal)\n- help",
           });
           break;
         case "ls":
@@ -67,7 +81,7 @@ const Profile = () => {
           }
           break;
         case "vazhafetch":
-          newHistory.push({ type: "output", content: "dummy" });
+          newHistory.push({ type: "output", content: VAZHAFETCH });
           break;
         case "clear":
           newHistory = [];
@@ -87,79 +101,122 @@ const Profile = () => {
     }
   };
 
+  useEffect(() => {
+    if (!hasBooted) return;
+
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i < bootSequence.length) {
+        setBootLines((prev) => [...prev, bootSequence[i]]);
+        i++;
+      } else {
+        clearInterval(interval);
+
+        setTimeout(() => {
+          setBootLines((prev) => [...prev, "Welcome to Vazha's Portfolio"]);
+
+          setTimeout(() => {
+            setIsBooting(false);
+          }, 700);
+        }, 1500);
+      }
+    }, 120);
+
+    return () => clearInterval(interval);
+  }, [hasBooted]);
+
   return (
-    <section className="min-h-screen px-12  relative text-white">
+    <section
+      id="profile"
+      ref={sectionRef}
+      className=" flex flex-col justify-center min-h-screen px-12  relative text-white"
+    >
       <div className="flex flex-col md:flex-row justify-between gap-6">
         <Card
           className="w-full max-md:h-72 flex flex-col overflow-hidden"
           onClick={() => inputRef.current?.focus()}
         >
           <CardHeader className="flex bg-white text-black flex-row justify-between shrink-0">
-            <CardTitle> session: portfolio console</CardTitle>
+            <CardTitle>session: portfolio console</CardTitle>
             <TerminalIcon />
           </CardHeader>
-          <div
-            className="px-2 max-h-72 md:max-h-[630px] py-4 overflow-y-auto custom-scrollbar flex-1"
-            ref={terminalEndRef}
-          >
-            <p className="max-md:text-sm">
-              [HINT]: Type 'help' for displaying console command
-            </p>
-            <div className="space-y-2">
-              {history.map((item, i) => (
-                <div key={i}>
-                  {item.type === "input" ? (
-                    <div className="flex gap-2 items-center">
-                      <span className="max-md:text-sm inline-block text-white select-none whitespace-nowrap">
-                        guest@portfolio:~${" "}
-                      </span>
-                      <span className="max-md:text-sm text-green-500 font-bold">
-                        {item.content}
-                      </span>
-                    </div>
-                  ) : Array.isArray(item.content) ? (
-                    <div className="py-1 max-md:text-sm space-y-1">
-                      {item.content.map((file, i) => (
-                        <div key={i} className="flex items-center gap-2">
-                          <NotebookIcon className="size-5" />
-                          <span>{file}</span>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className=" max-md:text-sm text-white whitespace-pre-wrap">
-                      {item.content}
-                    </p>
-                  )}
-                </div>
-              ))}
 
-              <div className="flex text-center items-center gap-2">
-                <span className=" max-md:text-sm inline-block text-white select-none whitespace-nowrap">
-                  guest@portfolio:~${" "}
-                </span>
-                <div className="relative flex-1 flex items-center overflow-hidden">
-                  <input
-                    type="text"
-                    ref={inputRef}
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={handleCommand}
-                    className="bg-transparent max-md:text-sm w-full text-green-500 border-none outline-none font-bold caret-white whitespace-nowrap overflow-hidden"
-                    style={{ textOverflow: "clip" }}
-                  />
-                  {input.length > 86 && (
-                    <div className="absolute right-0 bg-black text-green-500 pl-2 pr-1 font-bold animate-pulse">
-                      {">"}
-                    </div>
-                  )}
-                </div>
+          <div className="px-2 max-h-72 md:max-h-[630px] py-4 overflow-y-auto custom-scrollbar flex-1">
+            {isBooting ? (
+              <div className="space-y-1">
+                {bootLines.map((line, idx) => (
+                  <div key={idx} className=" tracking-tighter">
+                    {line}
+                  </div>
+                ))}
+                <div className="w-3 h-6 bg-white animate-pulse inline-block mt-2" />
               </div>
+            ) : (
+              <>
+                <p className="max-md:text-sm">
+                  [HINT]: Type 'help' for displaying console command
+                </p>
 
-              <div ref={terminalEndRef} />
-            </div>
+                <div className="space-y-2">
+                  {history.map((item, i) => (
+                    <div key={i}>
+                      {item.type === "input" ? (
+                        <div className="flex gap-2 items-center">
+                          <span className="max-md:text-sm text-white select-none whitespace-nowrap">
+                            guest@portfolio:~${" "}
+                          </span>
+                          <span className="max-md:text-sm text-green-500 font-bold">
+                            {item.content}
+                          </span>
+                        </div>
+                      ) : Array.isArray(item.content) ? (
+                        <div className="py-1 max-md:text-sm space-y-1">
+                          {item.content.map((file, i) => (
+                            <div key={i} className="flex items-center gap-2">
+                              <NotebookIcon className="size-5" />
+                              <span>{file}</span>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="max-md:text-sm text-white whitespace-pre-wrap">
+                          {item.content}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+
+                  <div className="flex items-center gap-2">
+                    <span className="max-md:text-sm text-white select-none whitespace-nowrap">
+                      guest@portfolio:~${" "}
+                    </span>
+
+                    <div className="relative flex-1 flex items-center overflow-hidden">
+                      <input
+                        type="text"
+                        ref={inputRef}
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={handleCommand}
+                        className="bg-transparent max-md:text-sm w-full text-green-500 border-none outline-none font-bold caret-white whitespace-nowrap overflow-hidden"
+                      />
+
+                      {input.length > 86 && (
+                        <div className="absolute right-0 bg-black text-green-500 pl-2 pr-1 font-bold animate-pulse">
+                          {">"}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* scroll anchor */}
+                  <div ref={terminalEndRef} />
+                </div>
+              </>
+            )}
           </div>
         </Card>
+
         <div className="md:w-3xl flex flex-col gap-3">
           <Card>
             <CardHeader className="flex bg-white text-black flex-row justify-between">

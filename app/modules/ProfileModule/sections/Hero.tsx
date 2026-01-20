@@ -17,6 +17,12 @@ const SOCIAL_MEDIA_ICON = [
 ];
 
 const Hero = () => {
+  const handleToProfile = () => {
+    const profileSection = document.getElementById("profile");
+    if (profileSection) {
+      profileSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section className="h-fit relative text-white flex-col flex">
       <LetterGlitch
@@ -63,7 +69,10 @@ const Hero = () => {
           </div>
         </div>
       </LetterGlitch>
-      <button className="text-white absolute left-1/2 bottom-50 sm:bottom-96 backdrop-blur-xs bg-black/20 appearance-none animate-bounce rounded-full h-11 hover:border-green-500 hover:text-green-500 cursor-pointer  shadow-sm shadow-white hover:shadow-green-500 w-fit px-3 border -translate-x-1/2 z-998 text-center ">
+      <button
+        onClick={handleToProfile}
+        className="text-white absolute left-1/2 bottom-50 sm:bottom-96 backdrop-blur-xs bg-black/20 appearance-none animate-bounce rounded-full h-11 hover:border-green-500 hover:text-green-500 cursor-pointer  shadow-sm shadow-white hover:shadow-green-500 w-fit px-3 border -translate-x-1/2 z-998 text-center "
+      >
         <ArrowDownIcon className="size-5" />
       </button>
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black via-black/90 to-transparent pointer-events-none" />
