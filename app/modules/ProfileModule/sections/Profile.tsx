@@ -15,9 +15,9 @@ const Profile = () => {
   const [bootLines, setBootLines] = useState<string[]>([]);
   const [history, setHistory] = useState<NewHistory[]>([]);
   const [input, setInput] = useState("");
-  const terminalEndRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const terminalContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!sectionRef.current || hasBooted) return;
@@ -37,10 +37,10 @@ const Profile = () => {
   });
 
   useEffect(() => {
-    if (terminalEndRef.current) {
-      const container = terminalEndRef.current;
-      container.scrollTop = container.scrollHeight;
-    }
+    const el = terminalContainerRef.current;
+    if (!el) return;
+
+    el.scrollTop = el.scrollHeight;
   }, [history]);
 
   const handleCommand = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -141,7 +141,10 @@ const Profile = () => {
             <TerminalIcon />
           </CardHeader>
 
-          <div className="px-2 max-h-72 md:max-h-[630px] py-4 overflow-y-auto custom-scrollbar flex-1">
+          <div
+            ref={terminalContainerRef}
+            className="px-2 max-h-72 md:max-h-[630px] py-4 overflow-y-auto custom-scrollbar flex-1"
+          >
             {isBooting ? (
               <div className="space-y-1">
                 {bootLines.map((line, idx) => (
@@ -208,9 +211,6 @@ const Profile = () => {
                       )}
                     </div>
                   </div>
-
-                  {/* scroll anchor */}
-                  <div ref={terminalEndRef} />
                 </div>
               </>
             )}
