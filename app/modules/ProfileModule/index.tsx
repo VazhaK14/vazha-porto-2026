@@ -3,7 +3,7 @@ import Profile from "./sections/Profile";
 
 export function ProfileModule() {
   return (
-    <main>
+    <main className="">
       <Hero />
       <Profile />
     </main>

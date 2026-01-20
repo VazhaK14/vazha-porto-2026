@@ -89,7 +89,7 @@ const Navbar = () => {
           className={`${!isOpen ? "translate-y-200" : "translate-y-0"} scanlines  w-full border transition-all duration-500  border-green-500 bg-black p-4 shadow-green-500 shadow-sm`}
         >
           <p>
-            user@vazha:~$ ls ./Menu{" "}
+            guest@portfolio:~$ ls ./Menu{" "}
             <span className="animate-cursor inline-block">█</span>
           </p>
           <ul className="mt-2 space-y-1">
