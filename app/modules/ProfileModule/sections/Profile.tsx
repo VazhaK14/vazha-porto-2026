@@ -2,6 +2,7 @@ import { Card, CardHeader, CardTitle } from "~/components/ui/card";
 import { TerminalIcon, NotebookIcon } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 import { bootSequence, filesData, VAZHAFETCH } from "../payload";
+import Skills from "./Skills";
 
 type FileName = keyof typeof filesData;
 type NewHistory = {
@@ -243,6 +244,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      <Skills />
     </section>
   );
 };

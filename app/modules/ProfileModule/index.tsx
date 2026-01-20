@@ -7,7 +7,6 @@ export function ProfileModule() {
     <main className="">
       <Hero />
       <Profile />
-      <Skills />
     </main>
   );
 }
