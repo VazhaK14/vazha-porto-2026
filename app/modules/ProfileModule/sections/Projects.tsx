@@ -170,7 +170,7 @@ const Projects = () => {
   const projects = projectsData.filter((p) => !p.isFeatured);
 
   return (
-    <section className="text-white relative min-h-screen mb-20">
+    <section id="project" className="text-white relative min-h-screen mb-20">
       <h1 className="crt-title text-4xl md:text-7xl font-bold mb-10">
         Featured Projects
       </h1>

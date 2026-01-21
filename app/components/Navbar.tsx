@@ -8,7 +8,7 @@ interface NavLinkProps {
   label: string;
 }
 
-const MENU_DATA = ["Home", "Profile", "Experience", "Projects", "Skill"];
+const MENU_DATA = ["Home", "Profile", "Experience", "Projects", "Contact"];
 
 const NavLink = ({ label }: NavLinkProps) => {
   return (
@@ -33,6 +33,41 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const boxRef = useRef<HTMLDivElement | null>(null);
+
+  const handleToProfile = () => {
+    const profileSection = document.getElementById("profile");
+    if (profileSection) {
+      profileSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleToExperience = () => {
+    const experienceSection = document.getElementById("experience");
+    if (experienceSection) {
+      experienceSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleToProject = () => {
+    const projectSection = document.getElementById("project");
+    if (projectSection) {
+      projectSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleToHome = () => {
+    const handleToHome = document.getElementById("home");
+    if (handleToHome) {
+      handleToHome.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +97,7 @@ const Navbar = () => {
     <>
       <div
         className={`fixed top-4 left-5 md:left-0 text-white  w-full flex items-center z-999 justify-end md:justify-center px-10 py-4 md:py-8 transition-all duration-500 delay-300 ${
-          isVisible ? "translate-y-0" : "-translate-y-25"
+          isVisible ? "translate-y-0" : "-translate-y-30"
         }`}
       >
         <nav

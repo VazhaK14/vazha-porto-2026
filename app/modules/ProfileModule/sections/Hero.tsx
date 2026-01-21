@@ -24,7 +24,7 @@ const Hero = () => {
     }
   };
   return (
-    <section className="h-fit relative text-white flex-col flex">
+    <section id="home" className="h-fit relative text-white flex-col flex">
       <LetterGlitch
         glitchSpeed={50}
         centerVignette={true}

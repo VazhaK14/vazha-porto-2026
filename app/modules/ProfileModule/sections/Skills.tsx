@@ -4,10 +4,9 @@ import { Card, CardHeader, CardTitle } from "~/components/ui/card";
 
 const Skills = () => {
   return (
-    <section className="relative mt-10 ">
+    <section id="skill" className="relative mt-10 ">
       <Card>
-                          <CardHeader className="">
-        
+        <CardHeader className="">
           <CardTitle>My Skills</CardTitle>
         </CardHeader>
         <div className="w-full  shadow-lg shadow-white py-4 border-white mt-2">

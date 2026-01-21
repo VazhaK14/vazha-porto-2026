@@ -6,7 +6,7 @@ import { Form } from "react-router";
 import { Button } from "~/components/ui/button";
 const ContactMe = () => {
   return (
-    <section className=" mb-10 ">
+    <section id="contact-me" className=" mb-10 ">
       <h1 className="crt-title text-4xl md:text-7xl font-bold">Contact Me</h1>
       <div className="flex max-md:flex-col w-full  md:gap-30 flex-row">
         <div className="flex items-center justify-center">
