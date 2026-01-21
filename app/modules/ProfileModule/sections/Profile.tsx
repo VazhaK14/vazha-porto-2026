@@ -130,14 +130,14 @@ const Profile = () => {
     <section
       id="profile"
       ref={sectionRef}
-      className=" flex flex-col justify-center min-h-screen px-12  relative text-white"
+      className=" flex flex-col justify-center min-h-screen  relative text-white"
     >
       <div className="flex flex-col md:flex-row justify-between gap-6">
         <Card
           className="w-full max-md:h-72 flex flex-col overflow-hidden"
           onClick={() => inputRef.current?.focus()}
         >
-          <CardHeader className="flex bg-white text-black flex-row justify-between shrink-0">
+          <CardHeader>
             <CardTitle>session: portfolio console</CardTitle>
             <TerminalIcon />
           </CardHeader>

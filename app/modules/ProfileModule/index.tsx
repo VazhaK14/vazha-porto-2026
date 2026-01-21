@@ -1,12 +1,17 @@
+import Experience from "./sections/Experience";
 import Hero from "./sections/Hero";
 import Profile from "./sections/Profile";
-import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
 
 export function ProfileModule() {
   return (
-    <main className="">
+    <main>
       <Hero />
-      <Profile />
+      <div className="px-12">
+        <Profile />
+        <Experience />
+        <Projects />
+      </div>
     </main>
   );
 }

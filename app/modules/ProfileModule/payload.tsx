@@ -131,3 +131,72 @@ export const techLogos = [
   { node: <SiRailway />, title: "Railway" },
   { node: <SiPrisma />, title: "Railway", brandColor: `#${siPrisma.hex}` },
 ];
+
+export const experiences = [
+  {
+    title: "Open House Fasilkom UI 2024",
+    date: "Jul 2024 - Nov 2024",
+    role: "Human Resource of IT Development Team",
+    image: "/projects/oh-logo.webp",
+    desc: [
+      "Built and Optimized a dynamic user interface using Next.js and Tanstack Query, enhancing performance and data handling on the web platform",
+      "Developed a website to introduce Fasilkom UI to the general public, expected to be viewed by over 800 users",
+      "Managed the backend using Hono, Prisma ORM, and Neon for efficient and robust functionality",
+    ],
+  },
+  {
+    title: "PT Karya Dimensi Nugraha",
+    date: "Jul 2024 - Nov 2024",
+    image: "/projects/kda.png",
+    role: "Frontend Web Developer",
+    desc: [
+      "Built and Optimized a dynamic user interface using Next.js and Tanstack Query, enhancing performance and data handling on the web platform",
+      "Developed a website to introduce Fasilkom UI to the general public, expected to be viewed by over 800 users",
+      "Managed the backend using Hono, Prisma ORM, and Neon for efficient and robust functionality",
+    ],
+  },
+  {
+    title: "Open House Fasilkom UI 2024",
+    date: "Jul 2024 - Nov 2024",
+    role: "Frontend Web Developer",
+    image: "/projects/oh.png",
+    desc: [
+      "Built and Optimized a dynamic user interface using Next.js and Tanstack Query, enhancing performance and data handling on the web platform",
+      "Developed a website to introduce Fasilkom UI to the general public, expected to be viewed by over 800 users",
+      "Managed the backend using Hono, Prisma ORM, and Neon for efficient and robust functionality",
+    ],
+  },
+  {
+    title: "Open House Fasilkom UI 2024",
+    date: "Jul 2024 - Nov 2024",
+    role: "Frontend Web Developer",
+    image: "/projects/oh.png",
+    desc: [
+      "Built and Optimized a dynamic user interface using Next.js and Tanstack Query, enhancing performance and data handling on the web platform",
+      "Developed a website to introduce Fasilkom UI to the general public, expected to be viewed by over 800 users",
+      "Managed the backend using Hono, Prisma ORM, and Neon for efficient and robust functionality",
+    ],
+  },
+  {
+    title: "Open House Fasilkom UI 2024",
+    date: "Jul 2024 - Nov 2024",
+    role: "Frontend Web Developer",
+    image: "/projects/oh.png",
+    desc: [
+      "Built and Optimized a dynamic user interface using Next.js and Tanstack Query, enhancing performance and data handling on the web platform",
+      "Developed a website to introduce Fasilkom UI to the general public, expected to be viewed by over 800 users",
+      "Managed the backend using Hono, Prisma ORM, and Neon for efficient and robust functionality",
+    ],
+  },
+  {
+    title: "Open House Fasilkom UI 2024",
+    date: "Jul 2024 - Nov 2024",
+    role: "Frontend Web Developer",
+    image: "/projects/oh.png",
+    desc: [
+      "Built and Optimized a dynamic user interface using Next.js and Tanstack Query, enhancing performance and data handling on the web platform",
+      "Developed a website to introduce Fasilkom UI to the general public, expected to be viewed by over 800 users",
+      "Managed the backend using Hono, Prisma ORM, and Neon for efficient and robust functionality",
+    ],
+  },
+];

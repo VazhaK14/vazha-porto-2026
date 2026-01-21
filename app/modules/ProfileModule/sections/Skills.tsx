@@ -1,25 +1,30 @@
 import LogoLoop from "~/components/LogoLoop";
 import { techLogos } from "../payload";
+import { Card, CardHeader, CardTitle } from "~/components/ui/card";
 
 const Skills = () => {
   return (
-    <section className="relative pb-30">
-      {/* <h1 className="text-7xl font-bold crt-title scanlines ">My Skills</h1> */}
-      <div className="w-full border shadow-lg shadow-white py-4 border-white mt-20">
-        <LogoLoop
-          logos={techLogos}
-          speed={100}
-          direction="left"
-          logoHeight={60}
-          gap={60}
-          hoverSpeed={0}
-          scaleOnHover
-          fadeOut
-          className="text-white"
-          fadeOutColor="#000000"
-          ariaLabel="Technology partners"
-        />
-      </div>
+    <section className="relative mt-10 ">
+      <Card>
+        <CardHeader className="scanlines">
+          <CardTitle>My Skills</CardTitle>
+        </CardHeader>
+        <div className="w-full  shadow-lg shadow-white py-4 border-white mt-2">
+          <LogoLoop
+            logos={techLogos}
+            speed={100}
+            direction="left"
+            logoHeight={60}
+            gap={60}
+            hoverSpeed={0}
+            scaleOnHover
+            fadeOut
+            className="text-white"
+            fadeOutColor="#000000"
+            ariaLabel="Technology partners"
+          />
+        </div>
+      </Card>
     </section>
   );
 };
