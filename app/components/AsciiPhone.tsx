@@ -58,17 +58,6 @@ const AsciiPhone: React.FC = () => {
       `}</style>
 
       <div className="flex flex-col items-center justify-center relative min-h-[400px] ">
-        {isRinging && (
-          <>
-            <div className="absolute left-12 top-1/2 -translate-y-1/2 text-4xl opacity-10 animate-ping font-sans text-amber-500">
-              ((((
-            </div>
-            <div className="absolute right-12 top-1/2 -translate-y-1/2 text-4xl opacity-10 animate-ping font-sans text-amber-500">
-              ))))
-            </div>
-          </>
-        )}
-
         <pre
           onClick={() => setIsRinging(!isRinging)}
           className={`select-none leading-none text-[10px] md:text-[15px] whitespace-pre transition-colors duration-500 ${
