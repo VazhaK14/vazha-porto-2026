@@ -38,10 +38,14 @@ import {
 import LogoLoop from "~/components/LogoLoop";
 
 export const filesData = {
-  "aboutme.txt": "Vazha adalah jawa jawa jawa jawa jawa jawa jawa jawa",
-  "hobby.txt": "nigga jawa nigga jawa",
-  "skills.txt": "Jawa jawa jawa",
-  "fav_animal.txt": "Imma cat fucking lovers i love to fuck cats",
+  "aboutme.txt":
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia provident ea nisi quos, quia necessitatibus eaque voluptas aliquid mollitia labore doloribus illum similique magni a tenetur vero magnam repudiandae nesciunt!",
+  "hobby.txt":
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia provident ea nisi quos, quia necessitatibus eaque voluptas aliquid mollitia labore doloribus illum similique magni a tenetur vero magnam repudiandae nesciunt!",
+  "skills.txt":
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia provident ea nisi quos, quia necessitatibus eaque voluptas aliquid mollitia labore doloribus illum similique magni a tenetur vero magnam repudiandae nesciunt!",
+  "fav_animal.txt":
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia provident ea nisi quos, quia necessitatibus eaque voluptas aliquid mollitia labore doloribus illum similique magni a tenetur vero magnam repudiandae nesciunt!",
 };
 
 export const VAZHAFETCH = `    /\\_____/\\       vazha khayri
@@ -55,12 +59,12 @@ export const VAZHAFETCH = `    /\\_____/\\       vazha khayri
 
 export const bootSequence = [
   ":: running early hook [udev]",
-  ":: running early hook [archiso]",
+  ":: running early hook [vazhiso]",
   ":: Triggering uevents...",
-  "[    0.000000] Linux version 6.x.x-arch1-1",
+  "[    0.000000] Porto version 2.x.x-vazh1-1",
   "[    0.000000] Command line: initrd=/initramfs-linux.img",
   "[    1.234567] random: crng init done",
-  ":: mounting '/dev/disk/by-label/ARCH_2026' to '/run/archiso/bootmnt'",
+  ":: mounting '/dev/disk/by-label/VZHA_2026' to '/run/vzhaiso/bootmnt'",
   ":: mounting root filesystem",
   "[  OK  ] Mounted /",
   "[  OK  ] Mounted /proc",
@@ -72,7 +76,7 @@ export const bootSequence = [
   ":: Detecting hardware...",
   ":: Loading necessary modules...",
   "[  OK  ] Initialized network interface",
-  ":: Starting Arch Linux installation environment",
+  ":: Starting Vazha Porto installation environment",
   "------------------------------------------",
 ];
 
