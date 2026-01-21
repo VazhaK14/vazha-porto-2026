@@ -148,7 +148,7 @@ const ProjectCard = ({
         <h2 className="crt-title-black mb-2 text-black! text-xl md:text-2xl font-bold">
           {title}
         </h2>
-        <p className="text-sm  mb-4 flex-1">{desc}</p>
+        <p className="text-sm mb-4 flex-1">{desc}</p>
         <div className="flex gap-3 items-center ">
           {techstack.map((t, i) => (
             <span
