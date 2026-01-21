@@ -28,7 +28,7 @@ const AnimatedItem: React.FC<AnimatedItemProps> = ({
   onClick,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { amount: 0.5, once: false });
+  const inView = useInView(ref, { amount: 0.5, once: true });
   return (
     <motion.div
       ref={ref}
@@ -180,7 +180,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
             onMouseEnter={() => handleItemMouseEnter(index)}
             onClick={() => handleItemClick(item, index)}
           >
-            <Card className="shadow-md shadow-white">
+            <Card className="shadow-md group shadow-white">
               <CardHeader className="flex flex-row px-5 md:py-0 gap-0 text-start">
                 <div className="flex flex-col w-full ">
                   <CardTitle className="md:text-2xl">{item.title}</CardTitle>
@@ -189,7 +189,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-8 md:w-16 grayscale"
+                  className="w-8 md:w-16 group-hover:grayscale-0 grayscale"
                 />
               </CardHeader>
               <div className="px-4 flex flex-col  py-2">

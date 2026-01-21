@@ -7,7 +7,7 @@ export function ProfileModule() {
   return (
     <main>
       <Hero />
-      <div className="px-12">
+      <div className=" px-6 md:px-12">
         <Profile />
         <Experience />
         <Projects />
