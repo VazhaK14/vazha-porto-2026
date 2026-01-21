@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { FolderIcon, FolderOpenIcon, TerminalIcon } from "lucide-react";
+import { FolderIcon, TerminalIcon } from "lucide-react";
 import { useRef } from "react";
 
 interface NavLinkProps {

@@ -20,7 +20,6 @@ import {
 
 import {
   siReact,
-  siNextdotjs,
   siTypescript,
   siTailwindcss,
   siNestjs,
@@ -30,7 +29,6 @@ import {
   siCplusplus,
   siC,
   siPython,
-  siRailway,
   siFirebase,
   siMongodb,
   siDjango,

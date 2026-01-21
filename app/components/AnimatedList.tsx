@@ -10,7 +10,7 @@ import React, {
 
 import { motion, useInView } from "motion/react";
 import { Card, CardHeader, CardTitle } from "./ui/card";
-import { CodeIcon, CalendarIcon } from "lucide-react";
+import { CalendarIcon } from "lucide-react";
 
 interface AnimatedItemProps {
   children: ReactNode;
