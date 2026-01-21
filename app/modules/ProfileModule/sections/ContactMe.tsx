@@ -6,13 +6,13 @@ import { Form } from "react-router";
 import { Button } from "~/components/ui/button";
 const ContactMe = () => {
   return (
-    <section id="contact" className=" mb-10 ">
+    <section id="contact" className=" mb-10 scanlines">
       <h1 className="crt-title text-4xl md:text-7xl font-bold">Contact Me</h1>
       <div className="flex max-md:flex-col w-full  md:gap-30 flex-row">
         <div className="flex items-center justify-center">
           <AsciiPhone />
         </div>
-        <Card>
+        <Card className="border-white">
           <CardHeader>
             <CardTitle>Call Me Maybe :D</CardTitle>
           </CardHeader>

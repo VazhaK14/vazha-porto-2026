@@ -20,7 +20,17 @@ const Profile = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const terminalContainerRef = useRef<HTMLDivElement | null>(null);
 
+  const isMobile =
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 768px)").matches;
+
   useEffect(() => {
+    if (isMobile) {
+      setHasBooted(true);
+      setIsBooting(false);
+      return;
+    }
+
     if (!sectionRef.current || hasBooted) return;
 
     const observer = new IntersectionObserver(
@@ -103,7 +113,7 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    if (!hasBooted) return;
+    if (!hasBooted || isMobile) return;
 
     let i = 0;
     const interval = setInterval(() => {
