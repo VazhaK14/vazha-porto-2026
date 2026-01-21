@@ -8,10 +8,10 @@ export default function ProfilePage() {
   return <ProfileModule />;
 }
 
-export async function clientLoader(args: LoaderFunctionArgs) {
+export async function loader(args: LoaderFunctionArgs) {
   return ProfileLoader(args);
 }
 
-export async function clientAction(args: ActionFunctionArgs) {
+export async function action(args: ActionFunctionArgs) {
   return ProfileAction(args);
 }
