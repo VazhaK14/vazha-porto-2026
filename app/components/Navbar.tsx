@@ -62,7 +62,7 @@ const Navbar = () => {
     <>
       <div
         className={`fixed top-4 left-5 md:left-0 text-white  w-full flex items-center z-999 justify-end md:justify-center px-10 py-4 md:py-8 transition-all duration-500 delay-300 ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
+          isVisible ? "translate-y-0" : "-translate-y-25"
         }`}
       >
         <nav
@@ -81,12 +81,12 @@ const Navbar = () => {
       {/* Mobile View */}
       <div
         onClick={() => setIsOpen(false)}
-        className={`fixed flex sm: px-6 md:hidden md:pointer-events-none text-white ${isOpen ? "bg-black/40 opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} flex-col pb-24 bg-none transition-all duration-700 h-screen w-screen items-center justify-center z-999 gap-20`}
+        className={`fixed  flex sm: px-6 md:hidden md:pointer-events-none text-white ${isOpen ? "bg-black/40 opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} flex-col pb-24 bg-none transition-all duration-700 h-screen w-screen items-center justify-center z-999 gap-20`}
       >
         <div
           ref={boxRef}
           onClick={(e) => e.stopPropagation()}
-          className={`${!isOpen ? "translate-y-200" : "translate-y-0"} scanlines  w-full border transition-all duration-500  border-green-500 bg-black p-4 shadow-green-500 shadow-sm`}
+          className={`${!isOpen ? "translate-y-200" : "translate-y-0"}  w-full border transition-all scanlines duration-500  border-green-500 bg-black p-4 shadow-green-500 shadow-sm`}
         >
           <p>
             guest@portfolio:~$ ls ./Menu{" "}

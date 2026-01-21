@@ -237,7 +237,7 @@ const Profile = () => {
               <CardHeader className="flex  bg-white text-black flex-row justify-between">
                 <CardTitle className="t"> Experience (Year)</CardTitle>
               </CardHeader>
-              <h1 className="font-bold py-4 crt-title scanlines text-4xl">
+              <h1 className="font-bold py-4 crt-title text-4xl">
                 1++
               </h1>
             </Card>

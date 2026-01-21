@@ -33,7 +33,7 @@ const Hero = () => {
       >
         <div className="flex flex-col text-center gap-6">
           <div className=" space-y-3 ">
-            <h1 className=" text-7xl max-md:text-6xl scanlines text-white crt-title font-bold">
+            <h1 className=" text-7xl max-md:text-6xl text-white crt-title font-bold">
               Vazha <br className="md:hidden" /> Khayri
             </h1>
             <TextType

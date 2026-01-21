@@ -42,6 +42,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="font-fira">
+        <div className="fixed inset-0 z-50 pointer-events-none scanlines" aria-hidden="true" />
         <Navbar />
         {children}
         <ScrollRestoration />

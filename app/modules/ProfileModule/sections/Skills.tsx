@@ -6,7 +6,8 @@ const Skills = () => {
   return (
     <section className="relative mt-10 ">
       <Card>
-        <CardHeader className="scanlines">
+                          <CardHeader className="">
+        
           <CardTitle>My Skills</CardTitle>
         </CardHeader>
         <div className="w-full  shadow-lg shadow-white py-4 border-white mt-2">

@@ -2,6 +2,7 @@ import { Card } from "~/components/ui/card";
 import { Button } from "~/components/ui/button";
 import { SiNextdotjs, SiTailwindcss, SiReact } from "react-icons/si";
 import { siTailwindcss, siReact } from "simple-icons";
+import { GithubIcon, LinkIcon } from "lucide-react";
 
 const FeaturedProject = () => {
   return (
@@ -35,7 +36,7 @@ const FeaturedProject = () => {
               className="size-12 "
             />
           </div>
-          <div className="flex mt-12 justify-between gap-5">
+          <div className="flex mt-5 md:mt-12 justify-between gap-5">
             <Button className="text-black text-xl h-12 flex font-bold justify-between flex-1 border-2 shadow-sm shadow-black border-black">
               <span>[</span>
               <span>Live Website</span>
@@ -66,7 +67,7 @@ const ProjectCard = () => {
         <div
           className="
     absolute inset-0
-    flex items-center justify-center gap-4
+    flex items-center justify-center 
     bg-linear-to-t from-black/50 to-transparent
     opacity-0
     transition-opacity duration-300
@@ -83,19 +84,21 @@ const ProjectCard = () => {
   
     "
           >
+            <GithubIcon />
             View Code
           </Button>
 
           <Button
             className="
       px-4 py-2
-      absolute left-35 bottom-4
+      absolute left-40 bottom-4
       translate-y-10
       group-hover:translate-y-0
       transition-transform duration-300
   
     "
           >
+            <LinkIcon />
             Live Site
           </Button>
         </div>
@@ -127,7 +130,7 @@ const ProjectCard = () => {
 const Projects = () => {
   return (
     <section className="text-white relative min-h-screen mb-10">
-      <h1 className="crt-title text-4xl max-md:mb-10 md:text-7xl scanlines font-bold ">
+      <h1 className="crt-title text-4xl max-md:mb-10 md:text-7xl font-bold ">
         Featured Projects
       </h1>
       <div className="w-fit flex flex-col mt-10">
