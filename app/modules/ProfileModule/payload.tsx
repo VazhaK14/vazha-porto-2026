@@ -200,3 +200,178 @@ export const experiences = [
     ],
   },
 ];
+
+export const projectsData = [
+  {
+    img: "/projects/oh.png",
+    title: "OH Fasilkom UI 2024",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum et fugit accusamus molestias omnis rem, sequi fuga vel quasi aspernatur consectetur distinctio reiciendis nobis necessitatibus praesentium numquam quas expedit",
+    techstack: [
+      { node: <SiReact />, title: "React", brandColor: `#${siReact.hex}` },
+
+      {
+        node: <SiNextdotjs />,
+        title: "Next.js",
+      },
+
+      {
+        node: <SiTypescript />,
+        title: "TypeScript",
+        brandColor: `#${siTypescript.hex}`,
+      },
+
+      {
+        node: <SiTailwindcss />,
+        title: "Tailwind CSS",
+        brandColor: `#${siTailwindcss.hex}`,
+      },
+    ],
+    webLink: "https://oh.cs.ui.ac.id",
+    repoLink: "https://github.com/OH-Fasilkom-UI",
+    isFeatured: true,
+  },
+  {
+    img: "/projects/oh.png",
+    title: "OH Fasilkom UI 2024",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum et fugit accusamus molestias omnis rem, sequi fuga vel quasi aspernatur consectetur distinctio reiciendis nobis necessitatibus praesentium numquam quas expedit",
+    techstack: [
+      {
+        node: <SiReact />,
+        title: "React",
+        brandColor: `#${siReact.hex}`,
+      },
+
+      {
+        node: <SiNextdotjs />,
+        title: "Next.js",
+      },
+
+      {
+        node: <SiTypescript />,
+        title: "TypeScript",
+        brandColor: `#${siTypescript.hex}`,
+      },
+
+      {
+        node: <SiTailwindcss />,
+        title: "Tailwind CSS",
+        brandColor: `#${siTailwindcss.hex}`,
+      },
+    ],
+    webLink: "",
+    repoLink: "",
+    isFeatured: false,
+  },
+  {
+    img: "/projects/oh.png",
+    title: "OH Fasilkom UI 2024",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum et fugit accusamus molestias omnis rem, sequi fuga vel quasi aspernatur consectetur distinctio reiciendis nobis necessitatibus praesentium numquam quas expedit",
+    techstack: [
+      { node: <SiReact />, title: "React", brandColor: `#${siReact.hex}` },
+
+      {
+        node: <SiNextdotjs />,
+        title: "Next.js",
+      },
+
+      {
+        node: <SiTypescript />,
+        title: "TypeScript",
+        brandColor: `#${siTypescript.hex}`,
+      },
+
+      {
+        node: <SiTailwindcss />,
+        title: "Tailwind CSS",
+        brandColor: `#${siTailwindcss.hex}`,
+      },
+    ],
+    webLink: "",
+    repoLink: "",
+    isFeatured: false,
+  },
+  {
+    img: "/projects/oh.png",
+    title: "OH Fasilkom UI 2024",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum et fugit accusamus molestias omnis rem, sequi fuga vel quasi aspernatur consectetur distinctio reiciendis nobis necessitatibus praesentium numquam quas expedit",
+    techstack: [
+      { node: <SiReact />, title: "React", brandColor: `#${siReact.hex}` },
+
+      {
+        node: <SiNextdotjs />,
+        title: "Next.js",
+      },
+
+      {
+        node: <SiTypescript />,
+        title: "TypeScript",
+        brandColor: `#${siTypescript.hex}`,
+      },
+
+      {
+        node: <SiTailwindcss />,
+        title: "Tailwind CSS",
+        brandColor: `#${siTailwindcss.hex}`,
+      },
+    ],
+    webLink: "",
+    repoLink: "",
+    isFeatured: false,
+  },
+  {
+    img: "/projects/oh.png",
+    title: "OH Fasilkom UI 2024",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum et fugit accusamus molestias omnis rem, sequi fuga vel quasi aspernatur consectetur distinctio reiciendis nobis necessitatibus praesentium numquam quas expedit",
+    techstack: [
+      { node: <SiReact />, title: "React", brandColor: `#${siReact.hex}` },
+
+      {
+        node: <SiNextdotjs />,
+        title: "Next.js",
+      },
+
+      {
+        node: <SiTypescript />,
+        title: "TypeScript",
+        brandColor: `#${siTypescript.hex}`,
+      },
+
+      {
+        node: <SiTailwindcss />,
+        title: "Tailwind CSS",
+        brandColor: `#${siTailwindcss.hex}`,
+      },
+    ],
+    webLink: "",
+    repoLink: "",
+    isFeatured: false,
+  },
+  {
+    img: "/projects/oh.png",
+    title: "OH Fasilkom UI 2024",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum et fugit accusamus molestias omnis rem, sequi fuga vel quasi aspernatur consectetur distinctio reiciendis nobis necessitatibus praesentium numquam quas expedit",
+    techstack: [
+      { node: <SiReact />, title: "React", brandColor: `#${siReact.hex}` },
+
+      {
+        node: <SiNextdotjs />,
+        title: "Next.js",
+      },
+
+      {
+        node: <SiTypescript />,
+        title: "TypeScript",
+        brandColor: `#${siTypescript.hex}`,
+      },
+
+      {
+        node: <SiTailwindcss />,
+        title: "Tailwind CSS",
+        brandColor: `#${siTailwindcss.hex}`,
+      },
+    ],
+    webLink: "",
+    repoLink: "",
+    isFeatured: false,
+  },
+];

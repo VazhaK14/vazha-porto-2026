@@ -170,7 +170,6 @@ body {
   .crt-card {
     position: relative;
     background: black;
-    border-radius: 0.75rem;
     overflow: hidden;
   }
 
@@ -251,8 +250,41 @@ body {
     drop-shadow: 0 0 15px var(--brand-color);
   }
 
-  .group\/item:hover .crt-logo-colorful {
+  .animate-cursor {
+    animation: cursor-fade 1.2s ease-in-out infinite;
+  }
+
+  /* NEW: CRT Vignette Hover Effect */
+  .crt-vignette-hover {
+    @apply absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300;
+    background: radial-gradient(
+      circle,
+      rgba(0, 255, 65, 0) 50%,
+      rgba(0, 255, 65, 0.1) 80%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    box-shadow: inset 0 0 20px rgba(0, 255, 65, 0.2);
+  }
+
+  .group:hover .crt-vignette-hover {
+    @apply opacity-100;
+  }
+
+  /* NEW: Glitch Hover Effect for Images */
+  .glitch-hover-effect {
+    @apply transition-all duration-300;
+  }
+
+  .group:hover .glitch-hover-effect {
+    filter: drop-shadow(4px 0 0 rgba(255, 0, 0, 0.5))
+      drop-shadow(-4px 0 0 rgba(0, 0, 255, 0.5));
+    transform: translate(-1px, 1px);
     animation: crt-flicker 0.1s steps(2, start) infinite;
+  }
+
+  /* NEW: Retro Border Glow */
+  .crt-border-glow {
+    @apply border border-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)];
   }
 }
 

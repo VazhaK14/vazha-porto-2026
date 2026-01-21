@@ -134,7 +134,7 @@ const Profile = () => {
     >
       <div className="flex flex-col md:flex-row justify-between gap-6">
         <Card
-          className="w-full max-md:h-72 flex flex-col overflow-hidden"
+          className="w-full border-2 border-white max-md:h-72 flex flex-col overflow-hidden crt-card"
           onClick={() => inputRef.current?.focus()}
         >
           <CardHeader>
@@ -144,7 +144,7 @@ const Profile = () => {
 
           <div
             ref={terminalContainerRef}
-            className="px-2 max-h-72 md:max-h-[630px] py-4 overflow-y-auto custom-scrollbar flex-1"
+            className="px-2 max-h-72 md:max-h-[630px] py-4 overflow-y-auto custom-scrollbar flex-1 relative z-20"
           >
             {isBooting ? (
               <div className="space-y-1">
@@ -219,25 +219,33 @@ const Profile = () => {
         </Card>
 
         <div className="md:w-3xl flex flex-col gap-3">
-          <Card>
-            <CardHeader className="flex bg-white text-black flex-row justify-between">
+          <Card className=" border-2 border-white">
+            <CardHeader className="flex bg-white text-black flex-row justify-between relative z-20">
               <CardTitle> session: profile picture</CardTitle>
               <TerminalIcon />
             </CardHeader>
-            <img src="/vazha.png" alt="Vazha's Picture" className="border " />
+            <div className="relative z-20">
+              <img
+                src="/vazha.png"
+                alt="Vazha's Picture"
+                className="border w-full"
+              />
+            </div>
           </Card>
           <div className="flex flex-row gap-3 justify-between">
-            <Card className="w-full text-center">
-              <CardHeader className="flex bg-white text-black flex-row justify-between">
+            <Card className="w-full text-center border-2 border-white">
+              <CardHeader className="flex bg-white text-black flex-row justify-between relative z-20">
                 <CardTitle>projects handled</CardTitle>
               </CardHeader>
-              <h1 className="font-bold py-4 crt-title text-4xl">8++</h1>
+              <h1 className="font-bold py-4 crt-title text-4xl relative z-20">
+                8++
+              </h1>
             </Card>
-            <Card className="w-full text-center">
-              <CardHeader className="flex  bg-white text-black flex-row justify-between">
+            <Card className="w-full text-center border-2 border-white">
+              <CardHeader className="flex  bg-white text-black flex-row justify-between relative z-20">
                 <CardTitle className="t"> Experience (Year)</CardTitle>
               </CardHeader>
-              <h1 className="font-bold py-4 crt-title text-4xl">
+              <h1 className="font-bold py-4 crt-title text-4xl relative z-20">
                 1++
               </h1>
             </Card>
