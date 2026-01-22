@@ -246,8 +246,8 @@ const Profile = () => {
           </Card>
           <div className="flex flex-row gap-3 justify-between">
             <Card className="w-full text-center border-2 border-white">
-              <CardHeader className="flex bg-white text-black flex-row justify-between relative z-20">
-                <CardTitle className="text-start">
+              <CardHeader className="flex bg-white max-md:w-full text-black flex-row justify-between relative z-20">
+                <CardTitle className="text-center w-full">
                   projects <br className="md:hidden" /> handled
                 </CardTitle>
               </CardHeader>
@@ -262,8 +262,8 @@ const Profile = () => {
               />
             </Card>
             <Card className="w-full text-center border-2 border-white">
-              <CardHeader className="flex  bg-white text-black flex-row justify-between relative z-20">
-                <CardTitle className="text-start">
+              <CardHeader className="flex max-md:w-full bg-white text-black flex-row justify-between relative z-20">
+                <CardTitle className="text-center w-full">
                   {" "}
                   Experience <br className="md:hidden" /> (Year)
                 </CardTitle>
