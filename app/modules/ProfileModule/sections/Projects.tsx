@@ -224,7 +224,9 @@ const Projects = () => {
         <h2 className="text-lg">
           Discover more on{" "}
           <Link to={"https://github.com/VazhaK14"}>
-            <span className="text-green-500 font-bold underline">Github</span>
+            <span className="text-green-500 font-bold hover:underline">
+              Github
+            </span>
           </Link>
         </h2>
       </div>

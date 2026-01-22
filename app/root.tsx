@@ -12,6 +12,7 @@ import { type MetaFunction } from "react-router";
 import type { Route } from "./+types/root";
 import "./app.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -64,6 +65,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Toaster />
         <Navbar />
         {children}
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>

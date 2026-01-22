@@ -3,14 +3,9 @@ import TextType from "~/components/TextType";
 import DecryptedText from "~/components/DecryptedText";
 import { Button } from "~/components/ui/button";
 import { Link } from "react-router";
+import { SOCIAL_MEDIA } from "../payload";
 
-import {
-  GithubIcon,
-  InstagramIcon,
-  MailIcon,
-  LinkedinIcon,
-  ArrowDownIcon,
-} from "lucide-react";
+import { ArrowDownIcon } from "lucide-react";
 
 import { motion, type Variants } from "motion/react";
 
@@ -46,21 +41,6 @@ const staggerContainer = {
     },
   },
 };
-
-const SOCIAL_MEDIA = [
-  {
-    link: "https://www.instagram.com/vazhaa._/",
-    icon: <InstagramIcon className="size-7" />,
-  },
-  {
-    link: "https://github.com/VazhaK14",
-    icon: <GithubIcon className="size-7" />,
-  },
-  {
-    link: "https://www.linkedin.com/in/vazha-khayri/",
-    icon: <LinkedinIcon className="size-7" />,
-  },
-];
 
 const Hero = () => {
   const handleToProfile = () => {

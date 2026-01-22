@@ -1,32 +1,16 @@
 {
   "buildManifest": {
-    "serverBundles": {
-      "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0": {
-        "id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
-        "file": "build/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
-        "config": {
-          "runtime": "nodejs"
-        }
-      }
-    },
-    "routeIdToServerBundleId": {
-      "routes/_page._index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
-    },
     "routes": {
       "root": {
         "id": "root",
-        "file": "app/root.tsx",
-        "path": "",
-        "config": {}
+        "file": "root.tsx",
+        "path": ""
       },
       "routes/_page._index": {
         "id": "routes/_page._index",
         "parentId": "root",
-        "file": "app/routes/_page._index.tsx",
-        "index": true,
-        "config": {
-          "runtime": "nodejs"
-        }
+        "file": "routes/_page._index.tsx",
+        "index": true
       }
     }
   },
@@ -56,12 +40,11 @@
       }
     },
     "routeDiscovery": {
-      "mode": "lazy",
-      "manifestPath": "/__manifest"
+      "mode": "initial"
     },
     "serverBuildFile": "index.js",
     "serverModuleFormat": "esm",
-    "ssr": true,
+    "ssr": false,
     "allowedActionOrigins": false,
     "unstable_routeConfig": [
       {

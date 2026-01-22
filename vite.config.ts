@@ -5,14 +5,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { vitePlugin as remix } from "@remix-run/dev";
 
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    reactRouter(),
-    tsconfigPaths(),
-    // remix({
-    //   ssr: false,
-    // }),
-  ],
+  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
   ssr: {
     noExternal: ["gsap"],
   },

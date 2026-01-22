@@ -39,6 +39,8 @@ import {
   siRailway,
 } from "simple-icons";
 
+import { InstagramIcon, LinkedinIcon, GithubIcon } from "lucide-react";
+
 export const filesData = {
   "aboutme.txt": `Vazha Khayri, a software engineering with a security-first mindset,
 designing and building systems by understanding how data flows,
@@ -351,5 +353,20 @@ export const projectsData = [
     webLink: "",
     repoLink: "",
     isFeatured: false,
+  },
+];
+
+export const SOCIAL_MEDIA = [
+  {
+    link: "https://www.instagram.com/vazhaa._/",
+    icon: <InstagramIcon className="size-7" />,
+  },
+  {
+    link: "https://github.com/VazhaK14",
+    icon: <GithubIcon className="size-7" />,
+  },
+  {
+    link: "https://www.linkedin.com/in/vazha-khayri/",
+    icon: <LinkedinIcon className="size-7" />,
   },
 ];
