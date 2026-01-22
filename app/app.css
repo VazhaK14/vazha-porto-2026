@@ -318,3 +318,8 @@ body {
 .animate-cursor {
   animation: cursor-fade 1.2s ease-in-out infinite;
 }
+
+::selection {
+  background: oklch(72.3% 0.219 149.579);
+  color: #ffffff;
+}
