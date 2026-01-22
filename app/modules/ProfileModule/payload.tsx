@@ -138,7 +138,7 @@ export const techLogos = [
   { node: <SiFirebase />, title: "Firebase", brandColor: `#${siFirebase.hex}` },
 
   { node: <SiRailway />, title: "Railway" },
-  { node: <SiPrisma />, title: "Railway", brandColor: `#${siPrisma.hex}` },
+  { node: <SiPrisma />, title: "Prisma", brandColor: `#${siPrisma.hex}` },
   { node: <SiShadcnui />, title: "ShadCn" },
   { node: <SiDocker />, title: "Docker", brandColor: `#${siDocker.hex}` },
 ];
