@@ -17,6 +17,7 @@ import {
   SiFlutter,
   SiPrisma,
   SiShadcnui,
+  SiDocker,
 } from "react-icons/si";
 
 import {
@@ -37,6 +38,7 @@ import {
   siPrisma,
   siShadcnui,
   siRailway,
+  siDocker,
 } from "simple-icons";
 
 import { InstagramIcon, LinkedinIcon, GithubIcon } from "lucide-react";
@@ -138,6 +140,7 @@ export const techLogos = [
   { node: <SiRailway />, title: "Railway" },
   { node: <SiPrisma />, title: "Railway", brandColor: `#${siPrisma.hex}` },
   { node: <SiShadcnui />, title: "ShadCn" },
+  { node: <SiDocker />, title: "ShadCn", brandColor: `#${siDocker.hex}` },
 ];
 
 export const experiences = [
