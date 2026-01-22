@@ -247,7 +247,9 @@ const Profile = () => {
           <div className="flex flex-row gap-3 justify-between">
             <Card className="w-full text-center border-2 border-white">
               <CardHeader className="flex bg-white text-black flex-row justify-between relative z-20">
-                <CardTitle>projects handled</CardTitle>
+                <CardTitle className="text-start">
+                  projects <br className="md:hidden" /> handled
+                </CardTitle>
               </CardHeader>
               <DecryptedText
                 text="8++"
@@ -261,7 +263,10 @@ const Profile = () => {
             </Card>
             <Card className="w-full text-center border-2 border-white">
               <CardHeader className="flex  bg-white text-black flex-row justify-between relative z-20">
-                <CardTitle className="t"> Experience (Year)</CardTitle>
+                <CardTitle className="text-start">
+                  {" "}
+                  Experience <br className="md:hidden" /> (Year)
+                </CardTitle>
               </CardHeader>
               <DecryptedText
                 text="1++"
