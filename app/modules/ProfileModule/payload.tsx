@@ -140,7 +140,7 @@ export const techLogos = [
   { node: <SiRailway />, title: "Railway" },
   { node: <SiPrisma />, title: "Railway", brandColor: `#${siPrisma.hex}` },
   { node: <SiShadcnui />, title: "ShadCn" },
-  { node: <SiDocker />, title: "ShadCn", brandColor: `#${siDocker.hex}` },
+  { node: <SiDocker />, title: "Docker", brandColor: `#${siDocker.hex}` },
 ];
 
 export const experiences = [
