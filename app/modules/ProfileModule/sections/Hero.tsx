@@ -1,6 +1,9 @@
 import LetterGlitch from "~/components/LetterGlitch";
 import TextType from "~/components/TextType";
+import DecryptedText from "~/components/DecryptedText";
 import { Button } from "~/components/ui/button";
+import { Link } from "react-router";
+
 import {
   GithubIcon,
   InstagramIcon,
@@ -9,33 +12,94 @@ import {
   ArrowDownIcon,
 } from "lucide-react";
 
-const SOCIAL_MEDIA_ICON = [
-  <InstagramIcon className="size-7" />,
-  <GithubIcon className="size-7" />,
-  <LinkedinIcon className="size-7" />,
-  <MailIcon className="size-7" />,
+import { motion, type Variants } from "motion/react";
+
+const springUp: Variants = {
+  hidden: {
+    y: 28,
+    opacity: 0,
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: {
+        type: "spring",
+        stiffness: 90,
+        damping: 22,
+        mass: 1.2,
+      },
+      opacity: {
+        duration: 0.25,
+        ease: "easeOut",
+      },
+    },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const SOCIAL_MEDIA = [
+  {
+    link: "https://www.instagram.com/vazhaa._/",
+    icon: <InstagramIcon className="size-7" />,
+  },
+  {
+    link: "https://github.com/VazhaK14",
+    icon: <GithubIcon className="size-7" />,
+  },
+  {
+    link: "https://www.linkedin.com/in/vazha-khayri/",
+    icon: <LinkedinIcon className="size-7" />,
+  },
 ];
 
 const Hero = () => {
   const handleToProfile = () => {
-    const profileSection = document.getElementById("profile");
-    if (profileSection) {
-      profileSection.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("profile")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const handleToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section id="home" className="h-fit relative text-white flex-col flex">
+    <section id="home" className="relative flex flex-col text-white h-fit">
       <LetterGlitch
         glitchSpeed={50}
-        centerVignette={true}
+        centerVignette
         outerVignette={false}
-        smooth={true}
+        smooth
       >
-        <div className="flex flex-col text-center gap-6">
-          <div className=" space-y-3 ">
-            <h1 className=" text-7xl max-md:text-6xl text-white crt-title font-bold">
-              Vazha <br className="md:hidden" /> Khayri
-            </h1>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex flex-col text-center gap-6"
+        >
+          <motion.h1 variants={springUp}>
+            <DecryptedText
+              text="Vazha Khayri"
+              speed={60}
+              animateOn="view"
+              revealDirection="start"
+              sequential
+              parentClassName="text-7xl max-md:text-6xl crt-title font-bold"
+              useOriginalCharsOnly={false}
+            />
+          </motion.h1>
+
+          {/* ================= ROLE ================= */}
+          <motion.h2 variants={springUp}>
             <TextType
               text={[
                 "Fullstack Developer",
@@ -51,31 +115,56 @@ const Hero = () => {
               cursorBlinkDuration={0.5}
               className="text-white text-2xl md:text-4xl"
             />
-          </div>
-          <div className="flex justify-center gap-5">
-            <Button className="text-white md:h-12 text-sm md:text-xl">
-              [ Contact Me ]{" "}
+          </motion.h2>
+
+          <motion.div variants={springUp} className="flex justify-center gap-5">
+            <Button
+              onClick={handleToContact}
+              className="text-white md:h-12 text-sm md:text-xl"
+            >
+              [ Contact Me ]
             </Button>
-            <Button className="text-white md:h-12 text-sm md:text-xl">
-              [ Download CV ]
-            </Button>
-          </div>
-          <div className="space-x-4">
-            {SOCIAL_MEDIA_ICON.map((icon, i) => (
-              <Button key={i} className="w-10 h-10 md:w-12 md:h-12">
-                {icon}
+            <Link to={"/cv.pdf"} target="_blank" rel="noopener noreferrer">
+              <Button className="text-white md:h-12 text-sm md:text-xl">
+                [ Download CV ]
               </Button>
+            </Link>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            className="flex justify-center gap-4"
+          >
+            {SOCIAL_MEDIA.map((sm, i) => (
+              <motion.div key={i} variants={springUp}>
+                <Link to={sm.link} target="_blank" rel="noopener noreferrer">
+                  <Button className="w-10 h-10 md:w-12 md:h-12">
+                    {sm.icon}
+                  </Button>
+                </Link>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </LetterGlitch>
+
       <button
         onClick={handleToProfile}
-        className="text-white absolute left-1/2 bottom-50 sm:bottom-96 backdrop-blur-xs bg-black/20 appearance-none animate-bounce rounded-full h-11 hover:border-green-500 hover:text-green-500 cursor-pointer  shadow-sm shadow-white hover:shadow-green-500 w-fit px-3 border -translate-x-1/2 z-998 text-center "
+        className="absolute left-1/2 bottom-50 sm:bottom-96
+          -translate-x-1/2 rounded-full px-3 h-11
+          bg-black/20 backdrop-blur-xs border
+          shadow-sm shadow-white
+          hover:border-green-500 hover:text-green-500
+          hover:shadow-green-500
+          animate-bounce cursor-pointer z-50"
       >
         <ArrowDownIcon className="size-5" />
       </button>
-      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black via-black/90 to-transparent pointer-events-none" />
+
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2
+        bg-linear-to-t from-black via-black/90 to-transparent"
+      />
     </section>
   );
 };

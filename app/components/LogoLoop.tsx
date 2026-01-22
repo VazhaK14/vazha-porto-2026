@@ -6,6 +6,8 @@ import React, {
   useState,
 } from "react";
 
+import RetroTooltip from "./RetroTooltip";
+
 export type LogoItem =
   | {
       node: React.ReactNode;
@@ -447,7 +449,9 @@ export const LogoLoop = React.memo<LogoLoopProps>(
             key={key}
             role="listitem"
           >
-            {inner}
+            <RetroTooltip text={(item as any).title} position="bottom">
+              {inner}
+            </RetroTooltip>
           </li>
         );
       },

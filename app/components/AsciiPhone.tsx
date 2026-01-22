@@ -53,13 +53,11 @@ const AsciiPhone: React.FC = () => {
 
         .ringing-active:hover {
           animation-play-state: paused;
-          cursor: pointer;
         }
       `}</style>
 
       <div className="flex flex-col items-center justify-center relative min-h-[400px] ">
         <pre
-          onClick={() => setIsRinging(!isRinging)}
           className={`select-none leading-none text-[10px] md:text-[15px] whitespace-pre transition-colors duration-500 ${
             isRinging ? "ringing-active text-white font-bold" : "text-zinc-700"
           }`}

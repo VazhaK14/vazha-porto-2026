@@ -6,10 +6,25 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { Toaster } from "sonner";
+import { type MetaFunction } from "react-router";
 
 import type { Route } from "./+types/root";
 import "./app.css";
 import Navbar from "./components/Navbar";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Vazha's Portfolio" },
+    {
+      name: "Vazha's Portfolio",
+      content:
+        "This is my personal portfolio to share my progress and projects",
+    },
+    { property: "og:title", content: "Vazha's Portfolio" },
+    { property: "og:image", content: "/favicon.ico" },
+  ];
+};
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -46,6 +61,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           className="fixed inset-0 z-50 pointer-events-none scanlines"
           aria-hidden="true"
         />
+        <Toaster />
         <Navbar />
         {children}
         <ScrollRestoration />

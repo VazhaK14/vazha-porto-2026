@@ -141,7 +141,7 @@ const Navbar = () => {
           isVisible ? "translate-y-0 opacity-100" : "-translate-y-40 opacity-0"
         }`}
       >
-        <nav className="flex flex-wrap w-fit md:w-2xl h-15 md:h-14 items-center  justify-center bg-white/10 backdrop-blur-xs max-md:border-2 border border-primary-1 shadow-white rounded-full px-4 md:px-8 py-3">
+        <nav className="flex flex-wrap w-fit md:w-2xl h-15 md:h-14 items-center  justify-center bg-white/10 backdrop-blur-md max-md:border-2 border border-primary-1 shadow-white rounded-full px-4 md:px-8 py-3">
           <div className="flex max-md:hidden flex-row text-center items-center font-semibold text-md font-visby gap-2 text-primary-1">
             {MENU_DATA.map((m, i) => (
               <NavLink

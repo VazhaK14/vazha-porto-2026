@@ -16,6 +16,7 @@ import {
   SiDjango,
   SiFlutter,
   SiPrisma,
+  SiShadcnui,
 } from "react-icons/si";
 
 import {
@@ -34,18 +35,20 @@ import {
   siDjango,
   siFlutter,
   siPrisma,
+  siShadcnui,
+  siRailway,
 } from "simple-icons";
-import LogoLoop from "~/components/LogoLoop";
 
 export const filesData = {
-  "aboutme.txt":
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia provident ea nisi quos, quia necessitatibus eaque voluptas aliquid mollitia labore doloribus illum similique magni a tenetur vero magnam repudiandae nesciunt!",
-  "hobby.txt":
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia provident ea nisi quos, quia necessitatibus eaque voluptas aliquid mollitia labore doloribus illum similique magni a tenetur vero magnam repudiandae nesciunt!",
-  "skills.txt":
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia provident ea nisi quos, quia necessitatibus eaque voluptas aliquid mollitia labore doloribus illum similique magni a tenetur vero magnam repudiandae nesciunt!",
-  "fav_animal.txt":
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia provident ea nisi quos, quia necessitatibus eaque voluptas aliquid mollitia labore doloribus illum similique magni a tenetur vero magnam repudiandae nesciunt!",
+  "aboutme.txt": `Vazha Khayri, a software engineering with a security-first mindset,
+designing and building systems by understanding how data flows,
+where risks emerge, and how vulnerabilities can be mitigated at every layer.
+interest lies in creating reliable, scalable, and secure products
+that solve real-world problems.`,
+  "whatido.txt":
+    "> Fullstack Developer: Building digital products through Website, Mobile, and Desktop \n> Cybersecurity Enthusiast: Currently learning DevOps & Web Exploitation",
+  "education.txt":
+    "Undergraduate Information System, Universitas Indonesia (2024 - 2028)",
 };
 
 export const VAZHAFETCH = `    /\\_____/\\       vazha khayri
@@ -132,73 +135,74 @@ export const techLogos = [
 
   { node: <SiRailway />, title: "Railway" },
   { node: <SiPrisma />, title: "Railway", brandColor: `#${siPrisma.hex}` },
+  { node: <SiShadcnui />, title: "ShadCn" },
 ];
 
 export const experiences = [
+  {
+    title: "BEM FASILKOM UI",
+    date: "Jul 2025 - Dec 2025",
+    image: "/projects/bempacil-logo.png",
+    role: "Deputy of Business and Partnership Bureau",
+    desc: [
+      "Co-leading 15 bureau members in the fields of SE, UI/UX, and PM",
+      "Developed JituPTN using Next.js & Nest.js for scalable modern UTBK Tryout app, utilizing Railway as PaaS for production",
+      "Maintained & Developed Pemira FISIP Website using Next.js, utilizing server-side for monorepo, and Railway as PaaS for production",
+    ],
+  },
+  {
+    title: "BEM UI",
+    date: "Aug 2025 - Dec 2025",
+    image: "/projects/bemui-logo.jpg",
+    role: "Software Engineer of Multimedia Bureau",
+    desc: [
+      "Developed Multi-Event Recruitment Platform SPT (Sistem Perekrutan Terbuka) using Next.js & Hono",
+      "Craeted 2 application modules using modern interface utilizing ShadCN.",
+      "Application purpose to multiple UI student organization can effectively manage open recruitment for various events.",
+    ],
+  },
+  {
+    title: "UI Innovation War",
+    date: "Aug 2025 - Nov 2025",
+    image: "/projects/uiiw-logo.webp",
+    role: "Software Engineer of Operational",
+    desc: [
+      "Developed profile & registration website interface using Next.js.",
+      "Designed 2 primary sections UI/UX website using Figma.",
+      "Managed repository structure and controlling git flow around developer team.",
+    ],
+  },
+  {
+    title: "COMPFEST 17",
+    date: "Jan 2024 - Sept 2024",
+    image: "/projects/compfest-logo.png",
+    role: "Software Engineer Academy Expert Staff",
+    desc: [
+      "Developed selection & final Task for SE Academy candidates",
+      "Grading 10+ tasks across various techstack",
+      "Actively participated in an exclusive workshop SE Academy Compfest with Industrial Experts",
+    ],
+  },
+  {
+    title: "PT Karya Dimensi Nugraha (Freelance)",
+    date: "Jul 2024 - Nov 2024",
+    image: "/projects/kda.png",
+    role: "Frontend Web Developer",
+    desc: [
+      "Built responsive, production-ready user interface using Next.js",
+      "Delivered a scalable portfolio profile website to strengthen startup's brand identity",
+      "Collaborated with stakeholders to translate business requirements into a clean, user-friendly portfolio website",
+    ],
+  },
   {
     title: "Open House Fasilkom UI 2024",
     date: "Jul 2024 - Nov 2024",
     role: "Human Resource of IT Development Team",
     image: "/projects/oh-logo.webp",
     desc: [
-      "Built and Optimized a dynamic user interface using Next.js and Tanstack Query, enhancing performance and data handling on the web platform",
-      "Developed a website to introduce Fasilkom UI to the general public, expected to be viewed by over 800 users",
-      "Managed the backend using Hono, Prisma ORM, and Neon for efficient and robust functionality",
-    ],
-  },
-  {
-    title: "PT Karya Dimensi Nugraha",
-    date: "Jul 2024 - Nov 2024",
-    image: "/projects/kda.png",
-    role: "Frontend Web Developer",
-    desc: [
-      "Built and Optimized a dynamic user interface using Next.js and Tanstack Query, enhancing performance and data handling on the web platform",
-      "Developed a website to introduce Fasilkom UI to the general public, expected to be viewed by over 800 users",
-      "Managed the backend using Hono, Prisma ORM, and Neon for efficient and robust functionality",
-    ],
-  },
-  {
-    title: "Open House Fasilkom UI 2024",
-    date: "Jul 2024 - Nov 2024",
-    role: "Frontend Web Developer",
-    image: "/projects/oh-logo.webp",
-    desc: [
-      "Built and Optimized a dynamic user interface using Next.js and Tanstack Query, enhancing performance and data handling on the web platform",
-      "Developed a website to introduce Fasilkom UI to the general public, expected to be viewed by over 800 users",
-      "Managed the backend using Hono, Prisma ORM, and Neon for efficient and robust functionality",
-    ],
-  },
-  {
-    title: "Open House Fasilkom UI 2024",
-    date: "Jul 2024 - Nov 2024",
-    role: "Frontend Web Developer",
-    image: "/projects/oh-logo.webp",
-    desc: [
-      "Built and Optimized a dynamic user interface using Next.js and Tanstack Query, enhancing performance and data handling on the web platform",
-      "Developed a website to introduce Fasilkom UI to the general public, expected to be viewed by over 800 users",
-      "Managed the backend using Hono, Prisma ORM, and Neon for efficient and robust functionality",
-    ],
-  },
-  {
-    title: "Open House Fasilkom UI 2024",
-    date: "Jul 2024 - Nov 2024",
-    role: "Frontend Web Developer",
-    image: "/projects/oh-logo.webp",
-    desc: [
-      "Built and Optimized a dynamic user interface using Next.js and Tanstack Query, enhancing performance and data handling on the web platform",
-      "Developed a website to introduce Fasilkom UI to the general public, expected to be viewed by over 800 users",
-      "Managed the backend using Hono, Prisma ORM, and Neon for efficient and robust functionality",
-    ],
-  },
-  {
-    title: "Open House Fasilkom UI 2024",
-    date: "Jul 2024 - Nov 2024",
-    role: "Frontend Web Developer",
-    image: "/projects/oh-logo.webp",
-    desc: [
-      "Built and Optimized a dynamic user interface using Next.js and Tanstack Query, enhancing performance and data handling on the web platform",
-      "Developed a website to introduce Fasilkom UI to the general public, expected to be viewed by over 800 users",
-      "Managed the backend using Hono, Prisma ORM, and Neon for efficient and robust functionality",
+      "Built and Optimized a responsive user interface using Next.js",
+      "Developed a website to introduce Fasilkom UI to the general public",
+      "First project I handled through learning process in web development",
     ],
   },
 ];
@@ -207,7 +211,7 @@ export const projectsData = [
   {
     img: "/projects/oh.png",
     title: "OH Fasilkom UI 2024",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum et fugit accusamus molestias omnis rem, sequi fuga vel quasi aspernatur consectetur distinctio reiciendis nobis necessitatibus praesentium numquam quas expedit",
+    desc: "Open House Fasilkom UI is annual event to introduce and promote Fasilkom UI. as a Human Resource, I've learned a lot about Web Development and make my part on 2 primary sections in the website.",
     techstack: [
       { node: <SiReact />, title: "React", brandColor: `#${siReact.hex}` },
 
@@ -230,12 +234,12 @@ export const projectsData = [
     ],
     webLink: "https://oh.cs.ui.ac.id",
     repoLink: "https://github.com/OH-Fasilkom-UI",
-    isFeatured: true,
+    isFeatured: false,
   },
   {
     img: "/projects/oh.png",
-    title: "OH Fasilkom UI 2024",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum et fugit accusamus molestias omnis rem, sequi fuga vel quasi aspernatur consectetur distinctio reiciendis nobis necessitatibus praesentium numquam quas expedit",
+    title: "PT Karya Dimensi Nugraha",
+    desc: "PT Karya Dimensi Nugraha is a construction startup. I've developed their company profile website, creating professional profile for their company and displaying projects to engage potential clients.",
     techstack: [
       {
         node: <SiReact />,
@@ -260,14 +264,14 @@ export const projectsData = [
         brandColor: `#${siTailwindcss.hex}`,
       },
     ],
-    webLink: "",
-    repoLink: "",
+    webLink: "https://www.karyadimensinugraha.com/",
+    repoLink: "https://github.com/hsyadid/KDA-Web",
     isFeatured: false,
   },
   {
     img: "/projects/oh.png",
-    title: "OH Fasilkom UI 2024",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum et fugit accusamus molestias omnis rem, sequi fuga vel quasi aspernatur consectetur distinctio reiciendis nobis necessitatibus praesentium numquam quas expedit",
+    title: "SPT BEM UI",
+    desc: "Website providing recruitment management system and engagement for UI student event organizers to register and manage recruitments to official BEM UI SPT website.",
     techstack: [
       { node: <SiReact />, title: "React", brandColor: `#${siReact.hex}` },
 
@@ -286,16 +290,32 @@ export const projectsData = [
         node: <SiTailwindcss />,
         title: "Tailwind CSS",
         brandColor: `#${siTailwindcss.hex}`,
+      },
+      {
+        node: <SiHono />,
+        title: "Hono",
+        brandColor: `#${siHono.hex}`,
+      },
+      {
+        node: <SiPostgresql />,
+        title: "Hono",
+        brandColor: `#${siPostgresql.hex}`,
+      },
+      {
+        node: <SiRailway />,
+        title: "Railway",
+        brandColor: `#${siRailway.hex}`,
       },
     ],
     webLink: "",
-    repoLink: "",
-    isFeatured: false,
+    repoLink: "https://github.com/Badan-Eksekutif-Mahasiswa",
+    isFeatured: true,
   },
+
   {
     img: "/projects/oh.png",
-    title: "OH Fasilkom UI 2024",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum et fugit accusamus molestias omnis rem, sequi fuga vel quasi aspernatur consectetur distinctio reiciendis nobis necessitatibus praesentium numquam quas expedit",
+    title: "Pemira FISIP UI 2025",
+    desc: "Developed and maintained the E-Voting website for Fakultas Ilmu Sosial dan Ilmu Politik (FISIP) Universitas Indonesia. Enhanced existing features from the previous year’s system, improved scalability to support a larger voting volume, and deployed a production-ready server infrastructure using Railway.",
     techstack: [
       { node: <SiReact />, title: "React", brandColor: `#${siReact.hex}` },
 
@@ -315,61 +335,17 @@ export const projectsData = [
         title: "Tailwind CSS",
         brandColor: `#${siTailwindcss.hex}`,
       },
-    ],
-    webLink: "",
-    repoLink: "",
-    isFeatured: false,
-  },
-  {
-    img: "/projects/oh.png",
-    title: "OH Fasilkom UI 2024",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum et fugit accusamus molestias omnis rem, sequi fuga vel quasi aspernatur consectetur distinctio reiciendis nobis necessitatibus praesentium numquam quas expedit",
-    techstack: [
-      { node: <SiReact />, title: "React", brandColor: `#${siReact.hex}` },
 
       {
-        node: <SiNextdotjs />,
-        title: "Next.js",
-      },
-
-      {
-        node: <SiTypescript />,
-        title: "TypeScript",
-        brandColor: `#${siTypescript.hex}`,
-      },
-
-      {
-        node: <SiTailwindcss />,
+        node: <SiPostgresql />,
         title: "Tailwind CSS",
-        brandColor: `#${siTailwindcss.hex}`,
-      },
-    ],
-    webLink: "",
-    repoLink: "",
-    isFeatured: false,
-  },
-  {
-    img: "/projects/oh.png",
-    title: "OH Fasilkom UI 2024",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum et fugit accusamus molestias omnis rem, sequi fuga vel quasi aspernatur consectetur distinctio reiciendis nobis necessitatibus praesentium numquam quas expedit",
-    techstack: [
-      { node: <SiReact />, title: "React", brandColor: `#${siReact.hex}` },
-
-      {
-        node: <SiNextdotjs />,
-        title: "Next.js",
+        brandColor: `#${siPostgresql.hex}`,
       },
 
       {
-        node: <SiTypescript />,
-        title: "TypeScript",
-        brandColor: `#${siTypescript.hex}`,
-      },
-
-      {
-        node: <SiTailwindcss />,
+        node: <SiRailway />,
         title: "Tailwind CSS",
-        brandColor: `#${siTailwindcss.hex}`,
+        brandColor: `#${siRailway.hex}`,
       },
     ],
     webLink: "",

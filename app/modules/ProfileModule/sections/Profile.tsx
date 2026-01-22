@@ -3,6 +3,8 @@ import { TerminalIcon, NotebookIcon } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 import { bootSequence, filesData, VAZHAFETCH } from "../payload";
 import Skills from "./Skills";
+import DecryptedText from "~/components/DecryptedText";
+import { motion } from "motion/react";
 
 type FileName = keyof typeof filesData;
 type NewHistory = {
@@ -144,7 +146,7 @@ const Profile = () => {
     >
       <div className="flex flex-col md:flex-row justify-between gap-6">
         <Card
-          className="w-full border-2 border-white max-md:h-72 flex flex-col overflow-hidden crt-card"
+          className="border-2 w-full border-white max-md:h-72 flex flex-col overflow-hidden crt-card"
           onClick={() => inputRef.current?.focus()}
         >
           <CardHeader>
@@ -247,17 +249,29 @@ const Profile = () => {
               <CardHeader className="flex bg-white text-black flex-row justify-between relative z-20">
                 <CardTitle>projects handled</CardTitle>
               </CardHeader>
-              <h1 className="font-bold py-4 crt-title text-4xl relative z-20">
-                8++
-              </h1>
+              <DecryptedText
+                text="8++"
+                speed={60}
+                animateOn="view"
+                revealDirection="start"
+                sequential
+                parentClassName="font-bold py-4 crt-title text-4xl relative z-20"
+                useOriginalCharsOnly={false}
+              />
             </Card>
             <Card className="w-full text-center border-2 border-white">
               <CardHeader className="flex  bg-white text-black flex-row justify-between relative z-20">
                 <CardTitle className="t"> Experience (Year)</CardTitle>
               </CardHeader>
-              <h1 className="font-bold py-4 crt-title text-4xl relative z-20">
-                1++
-              </h1>
+              <DecryptedText
+                text="1++"
+                speed={60}
+                animateOn="view"
+                revealDirection="start"
+                sequential
+                parentClassName="font-bold py-4 crt-title text-4xl relative z-20"
+                useOriginalCharsOnly={false}
+              />
             </Card>
           </div>
         </div>

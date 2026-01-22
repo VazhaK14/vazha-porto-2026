@@ -37,8 +37,8 @@ const AnimatedItem: React.FC<AnimatedItemProps> = ({
       onClick={onClick}
       initial={{ scale: 0.7, opacity: 0 }}
       animate={inView ? { scale: 1, opacity: 1 } : { scale: 0.7, opacity: 0 }}
-      transition={{ duration: 0.2, delay }}
-      className="mb-4 cursor-pointer"
+      transition={{ duration: 0.3, delay }}
+      className="mb-4 "
     >
       {children}
     </motion.div>
@@ -183,13 +183,15 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
             <Card className="shadow-md group shadow-white">
               <CardHeader className="flex flex-row px-5 md:py-0 gap-0 text-start">
                 <div className="flex flex-col w-full ">
-                  <CardTitle className="md:text-2xl">{item.title}</CardTitle>
-                  <p className="max-md:text-sm">{item.role}</p>
+                  <CardTitle className="text-md md:text-2xl">
+                    {item.title}
+                  </CardTitle>
+                  <p className="max-md:text-xs">{item.role}</p>
                 </div>
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-8 md:w-16 group-hover:grayscale-0 grayscale"
+                  className="w-8 md:w-16 group-hover:grayscale-0 md:grayscale"
                 />
               </CardHeader>
               <div className="px-4 flex flex-col  py-2">
