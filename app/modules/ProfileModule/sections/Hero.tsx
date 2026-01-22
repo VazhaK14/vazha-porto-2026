@@ -104,7 +104,13 @@ const Hero = () => {
             >
               [ Contact Me ]
             </Button>
-            <Link to={"/cv.pdf"} target="_blank" rel="noopener noreferrer">
+            <Link
+              to={
+                "https://docs.google.com/document/d/1VuxLwIDOdUcAbjX5XHmOr9k0Nk386DhrnURmx8l7sTI/edit?usp=sharing"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="text-white md:h-12 text-sm md:text-xl">
                 [ Download CV ]
               </Button>

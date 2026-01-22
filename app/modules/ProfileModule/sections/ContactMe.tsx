@@ -5,8 +5,7 @@ import {
   MailIcon,
   TextIcon,
   BookIcon,
-  Check,
-  X,
+
   UserIcon,
   CheckIcon,
 } from "lucide-react";
