@@ -4,7 +4,7 @@ import { SOCIAL_MEDIA } from "~/modules/ProfileModule/payload";
 
 const Footer = () => {
   return (
-    <footer className="px-20 py-5 text-center border-t items-center flex justify-between  text-white">
+    <footer className="px-20 py-5 text-center border-t items-center flex max-md:flex-col max-md:gap-3 justify-between  text-white">
       <p>© 2026 Vazha Khayri. All rights reserved.</p>
       <div className="flex justify-center gap-4">
         {SOCIAL_MEDIA.map((sm, i) => (
