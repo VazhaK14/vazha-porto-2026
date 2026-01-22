@@ -115,16 +115,26 @@ const Navbar = () => {
     };
 
     const observer = new IntersectionObserver(handleIntersect, {
-      rootMargin: "-40% 0px -40% 0px", // Memicu perubahan saat section ada di tengah layar
+      rootMargin: "-30% 0px -30% 0px", // Memicu perubahan saat section ada di tengah layar (middle 40%)
       threshold: 0,
     });
 
-    MENU_DATA.forEach((item) => {
-      const el = document.getElementById(item.id);
-      if (el) observer.observe(el);
-    });
+    const observeElements = () => {
+      MENU_DATA.forEach((item) => {
+        const el = document.getElementById(item.id);
+        if (el) observer.observe(el);
+      });
+    };
 
-    return () => observer.disconnect();
+    observeElements();
+
+    // Retry finding elements after a short delay to handle potential render timing issues
+    const timeoutId = setTimeout(observeElements, 500);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   useEffect(() => {
