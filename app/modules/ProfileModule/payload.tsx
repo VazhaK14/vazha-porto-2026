@@ -239,7 +239,7 @@ export const projectsData = [
     isFeatured: false,
   },
   {
-    img: "/projects/oh.png",
+    img: "/projects/kda-landing.png",
     title: "PT Karya Dimensi Nugraha",
     desc: "PT Karya Dimensi Nugraha is a construction startup. I've developed their company profile website, creating professional profile for their company and displaying projects to engage potential clients.",
     techstack: [
@@ -271,7 +271,7 @@ export const projectsData = [
     isFeatured: false,
   },
   {
-    img: "/projects/oh.png",
+    img: "/projects/spt.png",
     title: "SPT BEM UI",
     desc: "Website providing recruitment management system and engagement for UI student event organizers to register and manage recruitments to official BEM UI SPT website.",
     techstack: [
@@ -309,13 +309,13 @@ export const projectsData = [
         brandColor: `#${siRailway.hex}`,
       },
     ],
-    webLink: "",
+    webLink: "https://spt.bem-ui.com/",
     repoLink: "https://github.com/Badan-Eksekutif-Mahasiswa",
     isFeatured: true,
   },
 
   {
-    img: "/projects/oh.png",
+    img: "/projects/pemira.jpeg",
     title: "Pemira FISIP UI 2025",
     desc: "Developed and maintained the E-Voting website for Fakultas Ilmu Sosial dan Ilmu Politik (FISIP) Universitas Indonesia. Enhanced existing features from the previous year’s system, improved scalability to support a larger voting volume, and deployed a production-ready server infrastructure using Railway.",
     techstack: [
@@ -350,8 +350,8 @@ export const projectsData = [
         brandColor: `#${siRailway.hex}`,
       },
     ],
-    webLink: "",
-    repoLink: "",
+    webLink: "https://pemira-fisip.up.railway.app/",
+    repoLink: "https://github.com/bismit-fasilkom/pemira-fisip",
     isFeatured: false,
   },
 ];
