@@ -69,7 +69,7 @@ const Profile = () => {
           newHistory.push({
             type: "output",
             content:
-              "List of usable commands: \n- ls (show files)\n- cat [input desired file] (read file)\n- vazhafetch (vazha's cpu stats)\n- clear (clear the terminal)\n- help",
+              "List of usable commands: \n- ls (show files)\n- cat [input desired file] (read file)\n  ex: cat flag.txt\n- vazhafetch (vazha's cpu stats)\n- clear (clear the terminal)\n- help",
           });
           break;
         case "ls":
