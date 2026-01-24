@@ -5,6 +5,8 @@ import { bootSequence, filesData, VAZHAFETCH } from "../payload";
 import Skills from "./Skills";
 import DecryptedText from "~/components/DecryptedText";
 import { motion } from "motion/react";
+import { useFetcher } from "react-router";
+import { preview } from "vite";
 
 type FileName = keyof typeof filesData;
 type NewHistory = {
@@ -18,9 +20,27 @@ const Profile = () => {
   const [bootLines, setBootLines] = useState<string[]>([]);
   const [history, setHistory] = useState<NewHistory[]>([]);
   const [input, setInput] = useState("");
+
+  const [aiBehavior, setAiBehavior] = useState({
+    isAiMode: false,
+    isThinking: false,
+  });
+
   const sectionRef = useRef<HTMLElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const terminalContainerRef = useRef<HTMLDivElement | null>(null);
+
+  const fetcher = useFetcher();
+
+  useEffect(() => {
+    if (fetcher.data && fetcher.state === "idle" && aiBehavior.isThinking) {
+      setAiBehavior((prev) => ({ ...prev, isThinking: false }));
+      const response =
+        fetcher.data.response || "Error: AI Tidak memberi response";
+
+      setHistory((prev) => [...prev, { type: "output", content: response }]);
+    }
+  }, [fetcher.data, fetcher.state]);
 
   const isMobile =
     typeof window !== "undefined" &&
@@ -62,7 +82,27 @@ const Profile = () => {
       const [command, ...args] = trimmedInput.split(" ");
       const arg = args[0];
 
-      let newHistory = [...history, { type: "input", content: input }];
+      let newHistory = [
+        ...history,
+        { type: "input", content: input, isAi: aiBehavior.isAiMode },
+      ];
+
+      if (aiBehavior.isAiMode) {
+        if (trimmedInput.toLocaleLowerCase() === "exit") {
+          setAiBehavior((prev) => ({ ...prev, isAiMode: false }));
+          setHistory((prev) => [
+            ...prev,
+            { type: "output", content: "Exiting Vazha's AI Assistang Mode..." },
+          ]);
+        } else {
+          setAiBehavior((prev) => ({ ...prev, isThinking: true }));
+          fetcher.submit(
+            { prompt: trimmedInput },
+            { method: "POST", action: "/api/chat" },
+          );
+        }
+        return;
+      }
 
       switch (command) {
         case "help":
@@ -98,6 +138,17 @@ const Profile = () => {
           break;
         case "clear":
           newHistory = [];
+          break;
+        case "vazhaai":
+          setAiBehavior((prev) => ({ ...prev, isAiMode: true }));
+          setHistory((prev) => [
+            ...prev,
+            {
+              type: "output",
+              content:
+                "Booting VazhaAI... [Type 'exit' to quit]\nHow can Vazha's AI Assisstang help you today?",
+            },
+          ]);
           break;
         case "":
           break;

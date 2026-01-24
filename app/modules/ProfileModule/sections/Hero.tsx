@@ -78,7 +78,6 @@ const Hero = () => {
             />
           </motion.h1>
 
-          {/* ================= ROLE ================= */}
           <motion.h2 variants={springUp}>
             <TextType
               text={[
