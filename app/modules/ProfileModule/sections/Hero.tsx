@@ -65,7 +65,7 @@ const Hero = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col text-center gap-6"
+            className="flex flex-col lg:mt-40 xl:mt-0 text-center gap-6"
           >
             <motion.h1 variants={springUp}>
               <DecryptedText

@@ -19,26 +19,9 @@ const Profile = () => {
   const [history, setHistory] = useState<NewHistory[]>([]);
   const [input, setInput] = useState("");
 
-  const [aiBehavior, setAiBehavior] = useState({
-    isAiMode: false,
-    isThinking: false,
-  });
-
   const sectionRef = useRef<HTMLElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const terminalContainerRef = useRef<HTMLDivElement | null>(null);
-
-  const fetcher = useFetcher();
-
-  useEffect(() => {
-    if (fetcher.data && fetcher.state === "idle" && aiBehavior.isThinking) {
-      setAiBehavior((prev) => ({ ...prev, isThinking: false }));
-      const response =
-        fetcher.data.response || "Error: AI Tidak memberi response";
-
-      setHistory((prev) => [...prev, { type: "output", content: response }]);
-    }
-  }, [fetcher.data, fetcher.state]);
 
   const isMobile =
     typeof window !== "undefined" &&
@@ -60,7 +43,8 @@ const Profile = () => {
         }
       },
       {
-        threshold: 1,
+        rootMargin: "0px 0px 100px 0px",
+        threshold: 0.8,
       },
     );
     observer.observe(sectionRef.current);
@@ -80,27 +64,7 @@ const Profile = () => {
       const [command, ...args] = trimmedInput.split(" ");
       const arg = args[0];
 
-      let newHistory = [
-        ...history,
-        { type: "input", content: input, isAi: aiBehavior.isAiMode },
-      ];
-
-      if (aiBehavior.isAiMode) {
-        if (trimmedInput.toLocaleLowerCase() === "exit") {
-          setAiBehavior((prev) => ({ ...prev, isAiMode: false }));
-          setHistory((prev) => [
-            ...prev,
-            { type: "output", content: "Exiting Vazha's AI Assistang Mode..." },
-          ]);
-        } else {
-          setAiBehavior((prev) => ({ ...prev, isThinking: true }));
-          fetcher.submit(
-            { prompt: trimmedInput },
-            { method: "POST", action: "/api/chat" },
-          );
-        }
-        return;
-      }
+      let newHistory = [...history, { type: "input", content: input }];
 
       switch (command) {
         case "help":
