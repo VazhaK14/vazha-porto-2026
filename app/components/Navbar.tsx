@@ -5,7 +5,7 @@ import { FolderIcon, FolderOpenIcon, TerminalIcon } from "lucide-react";
 interface NavLinkProps {
   label: string;
   href: string;
-  isActive: boolean; // Tambahkan prop isActive
+  isActive: boolean;
   onClick?: () => void;
 }
 
@@ -63,10 +63,10 @@ const NavLink = ({ label, href, isActive, onClick }: NavLinkProps) => {
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home"); // State untuk section aktif
+  const [activeSection, setActiveSection] = useState("home");
 
   const lastScrollY = useRef(0);
-  const idleTimerRef = useRef<NodeJS.Timeout | null>(null); // Ref untuk timer idle
+  const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
   const boxRef = useRef<HTMLDivElement | null>(null);
 
   const handleMobileClick = (id: string) => {
@@ -77,12 +77,10 @@ const Navbar = () => {
     }
   };
 
-  // 1. Logic: Hide on Scroll Down, Show on Scroll Up / IDLE
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Sembunyikan jika scroll ke bawah, munculkan jika scroll ke atas
       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
         setIsVisible(false);
       } else {
@@ -90,7 +88,6 @@ const Navbar = () => {
       }
       lastScrollY.current = currentScrollY;
 
-      // LOGIKA IDLE: Jika diam selama 2 detik, munculkan navbar
       if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
       idleTimerRef.current = setTimeout(() => {
         setIsVisible(true);
@@ -104,7 +101,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // 2. Logic: Intersection Observer untuk Active Section
   useEffect(() => {
     const handleIntersect = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
@@ -115,7 +111,7 @@ const Navbar = () => {
     };
 
     const observer = new IntersectionObserver(handleIntersect, {
-      rootMargin: "-30% 0px -30% 0px", // Memicu perubahan saat section ada di tengah layar (middle 40%)
+      rootMargin: "-30% 0px -30% 0px",
       threshold: 0,
     });
 
@@ -128,7 +124,6 @@ const Navbar = () => {
 
     observeElements();
 
-    // Retry finding elements after a short delay to handle potential render timing issues
     const timeoutId = setTimeout(observeElements, 500);
 
     return () => {

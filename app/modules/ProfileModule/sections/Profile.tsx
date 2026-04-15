@@ -5,6 +5,7 @@ import { bootSequence, filesData, VAZHAFETCH } from "../payload";
 import Skills from "./Skills";
 import DecryptedText from "~/components/DecryptedText";
 import { useFetcher } from "react-router";
+import SpaceShooter from "./SpaceGame/SpaceShooter";
 
 type FileName = keyof typeof filesData;
 type NewHistory = {
@@ -18,6 +19,7 @@ const Profile = () => {
   const [bootLines, setBootLines] = useState<string[]>([]);
   const [history, setHistory] = useState<NewHistory[]>([]);
   const [input, setInput] = useState("");
+  const [isGameActive, setIsGameActive] = useState(false);
 
   const sectionRef = useRef<HTMLElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -71,7 +73,7 @@ const Profile = () => {
           newHistory.push({
             type: "output",
             content:
-              "List of usable commands: \n- ls (show files)\n- cat [input desired file] (read file)\n  ex: cat flag.txt\n- vazhafetch (vazha's cpu stats)\n- clear (clear the terminal)\n- help",
+              "List of usable commands: \n- ls (show files)\n- cat [input desired file] (read file)\n  ex: cat flag.txt\n- vazhafetch (vazha's cpu stats)\n- clear (clear the terminal)\n- hauntedspace (Space Invader's Alike) \n- help",
           });
           break;
         case "ls":
@@ -100,6 +102,10 @@ const Profile = () => {
           break;
         case "clear":
           newHistory = [];
+          break;
+        case "hauntedspace":
+          setIsGameActive(true);
+          newHistory.push({ type: "output", content: "Initializing Game..." });
           break;
         case "":
           break;
@@ -169,6 +175,10 @@ const Profile = () => {
                 ))}
                 <div className="w-3 h-6 bg-white animate-pulse inline-block mt-2" />
               </div>
+            ) : isGameActive ? (
+              <>
+                <SpaceShooter onExit={() => setIsGameActive(false)} />
+              </>
             ) : (
               <>
                 <p className="max-md:text-sm">
