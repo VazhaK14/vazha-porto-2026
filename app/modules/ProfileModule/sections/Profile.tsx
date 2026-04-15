@@ -104,8 +104,17 @@ const Profile = () => {
           newHistory = [];
           break;
         case "hauntedspace":
-          setIsGameActive(true);
-          newHistory.push({ type: "output", content: "Initializing Game..." });
+          const isLargeScreen = window.innerWidth >= 1024;
+
+          if (isLargeScreen) {
+            setIsGameActive(true);
+            newHistory.push({ type: "output", content: "Starting Gamee..." });
+          } else {
+            newHistory.push({
+              type: "output",
+              content: "Cannot be played on your phone/ipad",
+            });
+          }
           break;
         case "":
           break;
