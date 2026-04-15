@@ -4,9 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { bootSequence, filesData, VAZHAFETCH } from "../payload";
 import Skills from "./Skills";
 import DecryptedText from "~/components/DecryptedText";
-import { motion } from "motion/react";
 import { useFetcher } from "react-router";
-import { preview } from "vite";
 
 type FileName = keyof typeof filesData;
 type NewHistory = {
@@ -138,17 +136,6 @@ const Profile = () => {
           break;
         case "clear":
           newHistory = [];
-          break;
-        case "vazhaai":
-          setAiBehavior((prev) => ({ ...prev, isAiMode: true }));
-          setHistory((prev) => [
-            ...prev,
-            {
-              type: "output",
-              content:
-                "Booting VazhaAI... [Type 'exit' to quit]\nHow can Vazha's AI Assisstang help you today?",
-            },
-          ]);
           break;
         case "":
           break;
